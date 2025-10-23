@@ -1,0 +1,20 @@
+import React, { useMemo, useState } from 'react'
+import { toast } from '../components/Toast.jsx'
+const RKEY='careerq-resources'
+const base=[{id:1,title:'DSA Roadmap',category:'DSA',link:'#'},{id:2,title:'System Design Basics',category:'System Design',link:'#'},{id:3,title:'SQL Practice',category:'SQL',link:'#'}]
+export default function CareerPack(){
+  const [tab,setTab]=useState('skill')
+  const [items,setItems]=useState(()=>JSON.parse(localStorage.getItem(RKEY)||'null')||base)
+  const [q,setQ]=useState(''); const [sort,setSort]=useState('title'); const [title,setTitle]=useState(''); const [cat,setCat]=useState(''); const [link,setLink]=useState(''); const [err,setErr]=useState('')
+  const filtered=useMemo(()=>[...items].filter(i=>(i.title+' '+i.category).toLowerCase().includes(q.toLowerCase())).sort((a,b)=>(a[sort]||'').localeCompare(b[sort]||'')),[items,q,sort])
+  function add(e){ e.preventDefault(); setErr(''); if(title.trim().length<3){setErr('Title must be at least 3 characters.'); return} if(cat.trim().length<2){setErr('Enter a category.'); return}
+    const item={id:Date.now(),title:title.trim(),category:cat.trim(),link:link.trim()}; const next=[...items,item]; setItems(next); localStorage.setItem(RKEY, JSON.stringify(next)); setTitle(''); setCat(''); setLink(''); toast('Resource added') }
+  function del(id){ const next=items.filter(i=>i.id!==id); setItems(next); localStorage.setItem(RKEY, JSON.stringify(next)); toast('Resource deleted') }
+  return (<div><h2>Career Pack</h2><p className="muted">Curated skill map, project templates, and learning resources to help you land your next role.</p>
+    <div className="tabs"><button className={`tab ${tab==='skill'?'active':''}`} onClick={()=>setTab('skill')}>Skill map</button><button className={`tab ${tab==='projects'?'active':''}`} onClick={()=>setTab('projects')}>Projects</button><button className={`tab ${tab==='resources'?'active':''}`} onClick={()=>setTab('resources')}>Resources</button></div>
+    {tab==='skill'&&(<div className="grid-2"><div className="card" style={{padding:14,minHeight:260}}>Map</div><div className="side"><h4>Why Career Pack?</h4><ul><li>Mentorship — guidance on scope & interviews.</li><li>Portfolio-Ready — projects designed to showcase skills.</li><li>Interviews Prep — resources & tips.</li></ul></div></div>)}
+    {tab==='projects'&&(<div className="grid-3">{[{name:'AI Resume Screener',note:'Use TF-IDF + cosine similarity to rank resumes.'},{name:'Job Board with Filters',note:'Build with HTML/CSS/JS + pagination.'},{name:'Portfolio CI/CD',note:'Deploy to Netlify with GitHub Actions.'}].map(p=>(<div key={p.name} className="card" style={{padding:14}}><b>{p.name}</b><p className="muted">{p.note}</p></div>))}</div>)}
+    {tab==='resources'&&(<div><div className="card" style={{padding:14,marginBottom:12}}><h3>Curated Resources</h3><div className="controls"><input value={q} onChange={e=>setQ(e.target.value)} type="search" placeholder="Search resources..."/><select value={sort} onChange={e=>setSort(e.target.value)}><option value="title">Sort: Title A→Z</option><option value="category">Sort: Category</option></select></div>
+      <form onSubmit={add} className="grid-3" style={{gap:10,marginTop:6}}><input value={title} onChange={e=>setTitle(e.target.value)} placeholder="Title"/><input value={cat} onChange={e=>setCat(e.target.value)} placeholder="Category (e.g., DSA, SQL)"/><input value={link} onChange={e=>setLink(e.target.value)} placeholder="Link (optional)"/><button className="btn" style={{gridColumn:'1/-1',justifySelf:'start'}}>Add Resource</button><div className="err" style={{gridColumn:'1/-1'}}>{err}</div></form></div>
+      <div className="list">{filtered.map(i=>(<div key={i.id} className="card" style={{padding:14}}><b>{i.title}</b> <span className="badge">{i.category}</span><div className="muted" style={{margin:'6px 0'}}>{i.link?<a href={i.link} target="_blank">Open link</a>:'No link'}</div><button className="icon-btn" onClick={()=>del(i.id)}>Delete</button></div>))}</div></div>)}
+  </div>)}
