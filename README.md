@@ -2,6 +2,9 @@
 
 CareerQ is a web-based platform designed to help students and beginners discover the right career path based on their skills and interests. It provides personalized recommendations, job role insights, learning resources, and project ideas to build a strong portfolio.
 
+Figma Link:
+https://www.figma.com/proto/O9oKZN1dKrTRZG5OWTDpwv/Untitled?node-id=1-3&p=f&t=xvK2FMvBTBA196Xw-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3
+
 🔥 Key Features
 🎯 Career Quiz
 
