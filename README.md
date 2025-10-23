@@ -1,116 +1,83 @@
-CareerQ – Personalized Career Guidance & Portfolio Builder
+🌟 CareerQ
 
-CareerQ is a web-based application that helps students and early professionals discover their ideal career path, explore industry-relevant learning tracks, build a strong portfolio, and prepare for actual job roles through skill mapping, curated resources, projects, and job recommendations.
+CareerQ is a web-based platform designed to help students and beginners discover the right career path based on their skills and interests. It provides personalized recommendations, job role insights, learning resources, and project ideas to build a strong portfolio.
 
-🚀 Features
+🔥 Key Features
+🎯 Career Quiz
 
+Simple quiz to identify your interests and strengths
 
-🎯 Personalized Skill Quiz
+Generates a personalized career track recommendation
 
-Short interactive quiz designed to identify your strengths and interests.
+📊 Career Results
 
-Generates a custom career track (e.g., Web Development, Data Science, Cloud Computing).
+Displays top recommended career paths
 
-📊 Career Recommendations
+Shows real job roles with company names and locations
 
-Displays top 3 suitable career paths.
-
-Includes real-world job roles with company names and locations.
-
-Jobs can be filtered, sorted, and managed.
+Options to filter, sort, and remove jobs
 
 📚 Career Pack
 
-Curated learning roadmap for each path.
+Curated learning roadmaps
 
-Ready-to-build portfolio projects.
+Recommended resources (articles, videos, documentation)
 
-Add, search, sort, and delete learning resources.
+Practical portfolio-building projects
 
-🤖 JD Analyzer (Job Description Scanner)
+🤖 JD Analyzer
 
-Paste any job description.
+Paste any job description to see which skills you are missing
 
-The system highlights missing skills compared to your profile.
+Helps users understand real industry requirements
 
-Helps you understand what to learn next to become job-ready.
+⭐ Testimonials
 
-⭐ Testimonials Section
+Displays feedback from users
 
-Includes feedback from users.
-
-Allows new submissions to build social proof and trust.
+Allows new testimonials to be added
 
 🔐 Authentication
 
-Local account creation with email & password.
+Local signup and login system using email and password
 
-Login and logout functionality using browser storage (demo mode).
+Data stored in LocalStorage (demo mode)
 
 🛠 Tech Stack
-Technology	Purpose
-React (Vite)	Frontend Framework
-React Router	Navigation
-JavaScript	Logic & Interactivity
-LocalStorage	Client-side state persistence
-Pure CSS	Styling with a custom modern theme
-📂 Folder Structure
-careerq-react/
-└── src/
-    ├── components/     # Reusable UI components (Toast, Auth hook)
-    ├── pages/          # Main pages (Quiz, Results, CareerPack, etc.)
-    ├── App.jsx         # Routes + Layout
-    ├── main.jsx        # Entry point
-    └── styles.css      # Theme and global styling
-
-🔧 Installation & Setup
-# Clone the project
-git clone https://github.com/your-username/careerq.git
-
-# Navigate into the folder
-cd careerq-react
-
+Technology	Usage
+React + Vite	Frontend framework
+React Router	Page navigation
+JavaScript	Logic & interactivity
+LocalStorage	User data persistence
+Pure CSS	Styling & layout
+🚀 How to Run the Project
 # Install dependencies
 npm install
 
-# Start the development server
+# Start development server
 npm run dev
+📁 Project Structure
+<img width="810" height="172" alt="image" src="https://github.com/user-attachments/assets/5bcc5d7b-8af9-4ce2-93ab-21741586c142" />
+🎯 Purpose of CareerQ
+
+Provide clarity on which tech career suits the user
+
+Offer structured guidance instead of random tutorials
+
+Bridge the gap between learning and real job requirements
+
+Enable users to build portfolio-ready projects
+
+🔭 Future Enhancements
+
+Integration with live job APIs
+
+Backend authentication and database
+
+Progress tracking dashboards
+
+Certification and placement preparation modules
 
 
-Open the app at: http://localhost:5173
-
-🧭 How It Works (User Flow)
-
-Sign up / Log in
-
-Take the Skill Quiz
-
-View recommended career tracks
-
-Explore job roles and filter/sort them
-
-Go to the Career Pack → follow roadmap & start projects
-
-Use the JD Analyzer to compare your skills with real job descriptions
-
-Add your experience in Testimonials and share your journey
-
-🎯 Project Goals
-
-Help students identify the right career path using data-backed insights.
-
-Encourage skill-based learning rather than random tutorials.
-
-Provide structure and clarity to achieve job readiness.
-
-Bridge the gap between learning and real employment requirements.
-
-📌 Future Enhancements
-
-Integration with real APIs for job listings.
-
-User profiles with progress tracking.
-
-Admin dashboard for adding new career tracks.
-
-Gamification and badges for milestone completion.
+Then open the URL shown in the terminal (usually http://localhost:5173
+).
