@@ -46,6 +46,10 @@ Local signup and login system using email and password
 
 Data stored in LocalStorage (demo mode)
 
+#👩‍💻 About the Developer
+
+CareerQ was developed to help beginners in tech make smarter career choices using data-driven recommendations and real-world job insights.
+ 
 🛠 Tech Stack
 Technology	Usage
 React + Vite	Frontend framework
@@ -71,15 +75,13 @@ Bridge the gap between learning and real job requirements
 
 Enable users to build portfolio-ready projects
 
-🔭 Future Enhancements
+## 🔭 Future Enhancements
+- 🔌 Integration with live job APIs  
+- 🔐 Backend authentication and database  
+- 📈 Progress tracking dashboards  
+- 🏅 Certification and placement preparation modules  
 
-Integration with live job APIs
 
-Backend authentication and database
-
-Progress tracking dashboards
-
-Certification and placement preparation modules
 
 
 Then open the URL shown in the terminal (usually http://localhost:5173
